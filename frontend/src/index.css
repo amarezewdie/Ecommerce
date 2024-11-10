@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+a.active hr{
+    display: block;
+}
+
+@media (max-width:640px){
+    a.active{
+        background: black;
+        color: white;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 8px;
+        text-transform: uppercase;
+
+    }
+}
