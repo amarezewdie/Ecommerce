@@ -10,6 +10,7 @@ import Product from './pages/Product'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 const Hero = () => {
   return (
     <div className="px-5 flex items-center flex-col justify-center my-12 b ">
-      <div className="w-full h-[2px] bg-gray-500 mb-24"></div>
+     
 
       <div className="flex flex-col sm:flex-row justify-between   sm:gap-64 ">
         <div className="flex flex-col items-center justify-center gap-4  text-left w-full my-5">
