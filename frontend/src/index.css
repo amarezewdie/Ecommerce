@@ -17,3 +17,7 @@ a.active hr{
 
     }
 }
+ 
+::-webkit-scrollbar{
+    display: none;
+}

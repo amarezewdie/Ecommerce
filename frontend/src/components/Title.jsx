@@ -9,7 +9,6 @@ const Title = ({ text1, text2 }) => {
           <span className="text-slate-900 text-4xl">{text2}</span>
         </p>
       </div>
-      <p className="w-36 h-[2px] bg-slate-700 my-5"></p>
     </div>
   );
 };

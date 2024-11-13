@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
+import { ShopContext } from "../contexts/ShopContext";
 
 const NavBar = () => {
+  const { setShowSearch, showSearch, getCartCount } = useContext(ShopContext);
 
 const [visible,setVisible]=useState(false)    
   return (
     <div>
-      <div className="flex items-center justify-between gap-5 sm:mx-20 my-2">
+      <div className="flex items-center justify-between gap-5 sm:mx-20 ">
         <Link to="/">
           <img src={assets.logo} alt=" logo" className="w-20" />
         </Link>
@@ -34,9 +36,12 @@ const [visible,setVisible]=useState(false)
             src={assets.search_icon}
             alt=""
             className="w-5 cursor-pointer min-w-5"
+            onClick={() => setShowSearch(true)}
           />
           <div className="relative group">
-            <img src={assets.profile_icon} alt="" className="w-5 min-w-5" />
+            <Link to="/login">
+              <img src={assets.profile_icon} alt="" className="w-5 min-w-5" />{" "}
+            </Link>
             <div className="absolute hidden group-hover:block pt-2 right-0">
               <div className="flex flex-col bg-gray-100 text-gray-400 capitalize w-36 p-3 gap-2">
                 <p className="cursor-pointer hover:text-black">my profile</p>
@@ -45,10 +50,10 @@ const [visible,setVisible]=useState(false)
               </div>
             </div>
           </div>
-          <Link className="relative">
+          <Link to="/cart" className="relative">
             <img src={assets.cart_icon} alt="" className="w-5 min-w-5" />
             <p className="absolute bottom-[-5px] right-[-5px] bg-black text-white w-4 rounded-full aspect-square text-[8px] text-center leading-4">
-              10
+              {getCartCount()}
             </p>
           </Link>
           <img
@@ -89,7 +94,7 @@ const [visible,setVisible]=useState(false)
           </div>
         </div>
       </div>
-      <div className="border  w-full my-7"></div>
+      <div className="border w-full my-3"></div>
     </div>
   );
 };
